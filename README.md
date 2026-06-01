@@ -211,7 +211,7 @@ Open the notebook directly on Google Colab: [cyber_threat_text_classification.jp
 
 **4. Hugging Face token (for model upload only):**
 
-In Colab, open **🔑 Secrets** (left sidebar) and add:
+In Colab, open ** Secrets** (left sidebar) and add:
 - Key: `HF_TOKEN_WRITE`  
 - Value: Your Hugging Face Write token from huggingface.co/settings/tokens
 
