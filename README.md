@@ -1,16 +1,16 @@
----
-
 English [EN]
-
----
-
 # SLM Fine-Tuning for Cyber Threat Intelligence Classification
 <img width="1024" height="572" alt="main" src="https://github.com/user-attachments/assets/b6587783-7b1f-407d-95b5-d3f9707a36c1" />
-Figure 1. Experimental pipeline: Dataset → QLoRA Fine-Tuning → Evaluation across 4 SLMs × 3 seeds.
-(The figure was generated using Google Gemini for illustrative purposes.) [EN]
 
-Şekil 1. Deney hattı: Veri Kümesi → QLoRA İnce Ayar → 4 SLM × 3 çekirdek değeri üzerinden değerlendirme.
-(Şekil, açıklayıcı amaçlarla Google Gemini kullanılarak oluşturulmuştur.) [TR]
+<p align="center">
+  <strong>Figure 1.</strong> Overview of the cyber threat text classification system. 
+  <em>(The figure was generated using Google Gemini for illustrative purposes.)</em> [EN]
+</p>
+
+<p align="center">
+  <strong>Şekil 1.</strong> Siber tehdit metin sınıflandırma sistemine genel bakış.
+  <em>(Şekil, açıklayıcı amaçlarla Google Gemini kullanılarak oluşturulmuştur.)</em> [TR]
+</p>
 
 ---
 
