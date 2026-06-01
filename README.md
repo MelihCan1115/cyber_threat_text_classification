@@ -191,7 +191,7 @@ pip install -r requirements.txt
 
 **3. Run on Google Colab (recommended):**
 
-Open the notebook directly on Google Colab: [LLM_Last_Result.ipynb on Colab]([https://colab.research.google.com/github/MelihCan1115/slm-cti-classification/blob/main/notebooks/LLM_Last_Result.ipynb](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing))
+Open the notebook directly on Google Colab: [LLM_Last_Result.ipynb on Colab](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing)
 
 > Hardware requirement: GPU with ≥15 GB VRAM (Tesla T4 or better). Training all 4 models × 3 seeds takes approximately 4–5 hours.
 
@@ -205,7 +205,7 @@ In Colab, open **🔑 Secrets** (left sidebar) and add:
 
 ## Access Links
 
-- **Google Colab Notebook:** [Open in Colab]([https://colab.research.google.com/github/MelihCan1115/slm-cti-classification/blob/main/notebooks/LLM_Last_Result.ipynb](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing))
+- **Google Colab Notebook:** [Open in Colab](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing)
 - **Dataset:** [mrmoor/cyber-threat-intelligence on Hugging Face](https://huggingface.co/datasets/mrmoor/cyber-threat-intelligence)
 - **Best Fine-Tuned Model:** [MelihCan1115/cti-gemma-2-2b_seed123 on Hugging Face](https://huggingface.co/MelihCan1115/cti-gemma-2-2b_seed123)
 
@@ -415,7 +415,7 @@ pip install -r requirements.txt
 
 **3. Google Colab üzerinde çalıştırın (önerilen):**
 
-Not defterini doğrudan Google Colab'da açın: [LLM_Last_Result.ipynb — Colab'da Aç]([https://colab.research.google.com/github/MelihCan1115/slm-cti-classification/blob/main/notebooks/LLM_Last_Result.ipynb](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing))
+Not defterini doğrudan Google Colab'da açın: [LLM_Last_Result.ipynb — Colab'da Aç](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing)
 
 > Donanım gereksinimi: ≥15 GB VRAM'e sahip GPU (Tesla T4 veya daha iyi). 4 model × 3 çekirdek değerinin tamamının eğitilmesi yaklaşık 4–5 saat sürmektedir.
 
@@ -429,7 +429,7 @@ Colab'da sol kenar çubuğundaki **Gizli Değerler (Secrets)** bölümünü aç�
 
 ## Erişim Bağlantıları
 
-- **Google Colab Not Defteri:** [Colab'da Aç]([https://colab.research.google.com/github/MelihCan1115/slm-cti-classification/blob/main/notebooks/LLM_Last_Result.ipynb](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing))
+- **Google Colab Not Defteri:** [Colab'da Aç](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing)
 - **Veri Kümesi:** [Hugging Face — mrmoor/cyber-threat-intelligence](https://huggingface.co/datasets/mrmoor/cyber-threat-intelligence)
 - **En İyi İnce Ayarlı Model:** [MelihCan1115/cti-gemma-2-2b_seed123](https://huggingface.co/MelihCan1115/cti-gemma-2-2b_seed123)
 
