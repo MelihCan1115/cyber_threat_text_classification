@@ -5,7 +5,7 @@ English [EN]
 ---
 
 # SLM Fine-Tuning for Cyber Threat Intelligence Classification
-
+<img width="1024" height="572" alt="main" src="https://github.com/user-attachments/assets/b6587783-7b1f-407d-95b5-d3f9707a36c1" />
 Figure 1. Experimental pipeline: Dataset → QLoRA Fine-Tuning → Evaluation across 4 SLMs × 3 seeds.
 (The figure was generated using Google Gemini for illustrative purposes.) [EN]
 
@@ -139,6 +139,20 @@ Five standardized texts were tested against all fine-tuned models (seed=42):
 
 ---
 
+## Interactive Dashboard (Web UI)
+
+This repository includes a fully functional, static web dashboard (`/dashboard` directory) designed to demonstrate the project's capabilities. 
+
+### Features:
+- **No Backend Required:** Built with pure HTML, CSS, and Vanilla JavaScript. Can be hosted directly on GitHub Pages.
+- **Bilingual Interface:** Built-in dynamic localization (i18n) supporting both English and Turkish without page reloads.
+- **Classification Simulation:** An interactive testing area where users can input text and see simulated classification results modeled after the actual outputs of the `Gemma-2-2b` fine-tuned model.
+- **API-Ready Architecture:** The frontend logic is structured modularly, making it easy to connect to a real Python backend (e.g., FastAPI or Flask) serving the fine-tuned model via an endpoint.
+
+To use the dashboard, simply open `dashboard/index.html` in any modern web browser.
+
+---
+
 ## Results Summary
 
 | Model | Parameters | Fine-Tuning | Accuracy | Macro-F1 | Train Time | Inference | Size |
@@ -191,7 +205,7 @@ pip install -r requirements.txt
 
 **3. Run on Google Colab (recommended):**
 
-Open the notebook directly on Google Colab: [LLM_Last_Result.ipynb on Colab](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing)
+Open the notebook directly on Google Colab: [cyber_threat_text_classification.jpynb on Colab](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing)
 
 > Hardware requirement: GPU with ≥15 GB VRAM (Tesla T4 or better). Training all 4 models × 3 seeds takes approximately 4–5 hours.
 
@@ -363,6 +377,20 @@ Beş standartlaştırılmış metin, tüm ince ayarlı modellere (çekirdek=42) 
 
 ---
 
+## Etkileşimli Arayüz (Web Dashboard)
+
+Bu depo, projenin yeteneklerini sergilemek üzere tasarlanmış statik bir web arayüzü (`/dashboard` klasörü) içermektedir.
+
+### Özellikler:
+- **Sunucu Gerektirmez:** Saf HTML, CSS ve Vanilla JavaScript ile oluşturulmuştur. Doğrudan tarayıcıda veya GitHub Pages üzerinde çalıştırılabilir.
+- **Çift Dil Desteği:** Sayfa yenilenmesine gerek kalmadan anında çalışan dinamik Türkçe ve İngilizce dil desteği (i18n) sunar.
+- **Sınıflandırma Simülasyonu:** İnce ayar yapılmış `Gemma-2-2b` modelimizin gerçek çıktılarını temel alan, etkileşimli bir tehdit analizi simülasyonu barındırır.
+- **API Entegrasyonuna Hazır:** JavaScript mimarisi, modeli sunan gerçek bir Python arka ucuna (FastAPI veya Flask) kolayca bağlanabilecek şekilde modüler olarak tasarlanmıştır.
+
+Arayüzü denemek için `dashboard/index.html` dosyasını herhangi bir web tarayıcısında açmanız yeterlidir.
+
+---
+
 ## Sonuç Özeti Tablosu
 
 | Model | Parametre | İnce Ayar | Doğruluk | Makro-F1 | Eğitim Süresi | Çıkarım | Boyut |
@@ -415,7 +443,7 @@ pip install -r requirements.txt
 
 **3. Google Colab üzerinde çalıştırın (önerilen):**
 
-Not defterini doğrudan Google Colab'da açın: [LLM_Last_Result.ipynb — Colab'da Aç](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing)
+Not defterini doğrudan Google Colab'da açın: [cyber_threat_text_classification.jpynb - Colab'da Aç](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing)
 
 > Donanım gereksinimi: ≥15 GB VRAM'e sahip GPU (Tesla T4 veya daha iyi). 4 model × 3 çekirdek değerinin tamamının eğitilmesi yaklaşık 4–5 saat sürmektedir.
 
