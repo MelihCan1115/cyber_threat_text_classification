@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberThreat AI — SLM Fine-Tuning Dashboard</title>
+  <meta name="description" content="Interactive dashboard for comparing QLoRA fine-tuned Small Language Models on cyber threat intelligence classification tasks." />
+  <link rel="icon" type="image/png" href="pengu.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#overview" class="logo" id="logo-home" title="Ana Sayfa / Home">
+        <img src="pengu.png" alt="CyberThreat AI" class="logo-img" />
+        <span>Pengu<strong>Dective</strong></span>
+      </a>
+      <nav class="nav">
+        <a href="#overview" class="nav-link active" id="nav-overview" data-i18n="nav.overview">Overview</a>
+        <a href="#models" class="nav-link" id="nav-models" data-i18n="nav.models">Models</a>
+        <a href="#demo" class="nav-link" id="nav-demo" data-i18n="nav.demo">Live Demo</a>
+        <a href="#results" class="nav-link" id="nav-results" data-i18n="nav.results">Results</a>
+      </nav>
+      <div class="header-right">
+        <button class="lang-toggle" id="lang-toggle" title="Switch Language / Dil Değiştir">
+          <span class="lang-option" id="lang-en">EN</span>
+          <span class="lang-divider">|</span>
+          <span class="lang-option active-lang" id="lang-tr">TR</span>
+        </button>
+        <div class="header-badge">
+          <span class="pulse-dot"></span>
+          <span data-i18n="badge.qlora">QLoRA Fine-Tuned</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <span data-i18n="hero.tag">BDM Final Project — Melih Can KÖK / 258273001026</span>
+        </div>
+        <h1 class="hero-title">
+          <span data-i18n="hero.title1">SLM Fine-Tuning for</span><br />
+          <span class="gradient-text" data-i18n="hero.title2">Cyber Threat Classification</span>
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">
+          Comparative analysis of four Small Language Models fine-tuned with QLoRA on the <code>mrmoor/cyber-threat-intelligence</code> dataset. Supervised by Dr. Ali Cetinkaya.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-num">4</div>
+            <div class="stat-label" data-i18n="hero.stat.models">Models Tested</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">3</div>
+            <div class="stat-label" data-i18n="hero.stat.seeds">Seeds per Model</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">QLoRA</div>
+            <div class="stat-label" data-i18n="hero.stat.method">Fine-Tuning Method</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num gradient-text">~70%</div>
+            <div class="stat-label" data-i18n="hero.stat.acc">Best Accuracy</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Model Cards -->
+    <section class="section" id="models">
+      <div class="section-header">
+        <h2 data-i18n="models.title">Tested Models</h2>
+        <p data-i18n="models.subtitle">Four SLMs fine-tuned with 4-bit QLoRA across 3 random seeds each</p>
+      </div>
+      <div class="model-grid">
+        <div class="model-card" data-model="smollm2">
+          <div class="model-card-header">
+            <div class="model-icon smollm">S2</div>
+            <div class="model-badge">360M params</div>
+          </div>
+          <h3>SmolLM2-360M</h3>
+          <p class="model-org">HuggingFaceTB</p>
+          <div class="model-metrics">
+            <div class="metric"><span class="metric-label" data-i18n="metric.acc">Accuracy</span><span class="metric-val" id="sm-acc">—</span></div>
+            <div class="metric"><span class="metric-label">Macro-F1</span><span class="metric-val" id="sm-f1">—</span></div>
+          </div>
+          <div class="model-bar-wrap">
+            <div class="model-bar"><div class="model-bar-fill smollm-fill" id="sm-bar" style="width:0%"></div></div>
+          </div>
+        </div>
+
+        <div class="model-card" data-model="tinyllama">
+          <div class="model-card-header">
+            <div class="model-icon tiny">TL</div>
+            <div class="model-badge">1.1B params</div>
+          </div>
+          <h3>TinyLlama-1.1B</h3>
+          <p class="model-org">TinyLlama</p>
+          <div class="model-metrics">
+            <div class="metric"><span class="metric-label" data-i18n="metric.acc">Accuracy</span><span class="metric-val" id="tl-acc">—</span></div>
+            <div class="metric"><span class="metric-label">Macro-F1</span><span class="metric-val" id="tl-f1">—</span></div>
+          </div>
+          <div class="model-bar-wrap">
+            <div class="model-bar"><div class="model-bar-fill tiny-fill" id="tl-bar" style="width:0%"></div></div>
+          </div>
+        </div>
+
+        <div class="model-card" data-model="qwen">
+          <div class="model-card-header">
+            <div class="model-icon qwen">Q</div>
+            <div class="model-badge">1.5B params</div>
+          </div>
+          <h3>Qwen2.5-1.5B</h3>
+          <p class="model-org">Qwen / Alibaba</p>
+          <div class="model-metrics">
+            <div class="metric"><span class="metric-label" data-i18n="metric.acc">Accuracy</span><span class="metric-val" id="qw-acc">—</span></div>
+            <div class="metric"><span class="metric-label">Macro-F1</span><span class="metric-val" id="qw-f1">—</span></div>
+          </div>
+          <div class="model-bar-wrap">
+            <div class="model-bar"><div class="model-bar-fill qwen-fill" id="qw-bar" style="width:0%"></div></div>
+          </div>
+        </div>
+
+        <div class="model-card best-card" data-model="gemma">
+          <div class="best-badge" data-i18n="models.best">Best Model</div>
+          <div class="model-card-header">
+            <div class="model-icon gemma">G2</div>
+            <div class="model-badge">2B params</div>
+          </div>
+          <h3>Gemma-2-2b</h3>
+          <p class="model-org">Google</p>
+          <div class="model-metrics">
+            <div class="metric"><span class="metric-label" data-i18n="metric.acc">Accuracy</span><span class="metric-val" id="gm-acc">—</span></div>
+            <div class="metric"><span class="metric-label">Macro-F1</span><span class="metric-val" id="gm-f1">—</span></div>
+          </div>
+          <div class="model-bar-wrap">
+            <div class="model-bar"><div class="model-bar-fill gemma-fill" id="gm-bar" style="width:0%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Demo -->
+    <section class="section" id="demo">
+      <div class="section-header">
+        <h2 data-i18n="demo.title">Live Classification Demo</h2>
+        <p data-i18n="demo.subtitle">Enter a cyber threat intelligence text and see how the model classifies it</p>
+      </div>
+
+      <div class="demo-container">
+        <div class="demo-input-panel">
+          <label class="input-label" data-i18n="demo.inputLabel">Cyber Threat Text</label>
+          <textarea id="threat-input" class="threat-textarea" data-i18n-placeholder="demo.placeholder" placeholder="Enter threat intelligence text here..." rows="6"></textarea>
+
+          <div class="demo-samples">
+            <span class="samples-label" data-i18n="demo.samples">Quick samples:</span>
+            <button class="sample-btn" data-text="A new ransomware variant is spreading via phishing emails, encrypting files and demanding $5000 in Bitcoin. The malware uses AES-256 encryption.">Ransomware</button>
+            <button class="sample-btn" data-text="Threat actors exploited a zero-day vulnerability in Apache Log4j to gain remote code execution access to enterprise servers.">Exploit</button>
+            <button class="sample-btn" data-text="Hackerlar yeni bir fidye yazılımı (ransomware) ile Türk bankalarını hedef aldı. Sistemdeki açık nedeniyle saldırganlar sunucuya sızdı.">Türkçe</button>
+            <button class="sample-btn" data-text="A botnet of 50,000 IoT devices was used to conduct a distributed denial-of-service attack against a major DNS provider.">DDoS</button>
+          </div>
+
+          <div class="demo-controls">
+            <select id="model-select" class="model-select">
+              <option value="gemma">Gemma-2-2b (Best)</option>
+              <option value="qwen">Qwen2.5-1.5B</option>
+              <option value="tinyllama">TinyLlama-1.1B</option>
+              <option value="smollm2">SmolLM2-360M</option>
+            </select>
+            <button class="classify-btn" id="classify-btn">
+              <span data-i18n="demo.classifyBtn">Classify Threat</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="demo-output-panel">
+          <label class="input-label" data-i18n="demo.resultLabel">Classification Result</label>
+          <div class="result-box" id="result-box">
+            <div class="result-placeholder">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <p data-i18n="demo.resultPlaceholder">Result will appear here</p>
+            </div>
+          </div>
+
+          <div class="confidence-section" id="confidence-section" style="display:none;">
+            <label class="input-label" style="margin-top:1rem;" data-i18n="demo.confidence">Confidence Distribution</label>
+            <div class="confidence-bars" id="confidence-bars"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Table -->
+    <section class="section" id="results">
+      <div class="section-header">
+        <h2 data-i18n="results.title">Performance Results</h2>
+        <p data-i18n="results.subtitle">Aggregated metrics across 3 seeds (mean ± std). Load your actual results below.</p>
+      </div>
+
+      <div class="upload-zone" id="upload-zone">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <p><span data-i18n="results.drop">Drop your</span> <code>final_results_table.csv</code> <span data-i18n="results.dropOr">here or</span> <label for="csv-upload" class="upload-link" data-i18n="results.browse">browse</label></p>
+        <input type="file" id="csv-upload" accept=".csv" style="display:none;" />
+        <span class="upload-hint" data-i18n="results.hint">Or use the demo data below</span>
+        <button class="btn-secondary" id="load-demo-data" data-i18n="results.loadDemo">Load Demo Results</button>
+      </div>
+
+      <div class="results-table-wrap" id="results-table-wrap" style="display:none;">
+        <table class="results-table" id="results-table">
+          <thead>
+            <tr>
+              <th data-i18n="table.model">Model</th>
+              <th data-i18n="table.params">Params</th>
+              <th data-i18n="table.method">Method</th>
+              <th data-i18n="table.acc">Accuracy ↑</th>
+              <th>Macro-F1 ↑</th>
+              <th>Weighted-F1 ↑</th>
+              <th data-i18n="table.train">Train (min) ↓</th>
+              <th data-i18n="table.inf">Inference (ms) ↓</th>
+            </tr>
+          </thead>
+          <tbody id="results-tbody"></tbody>
+        </table>
+      </div>
+
+      <div class="chart-section" id="chart-section" style="display:none;">
+        <div class="chart-card">
+          <h3 data-i18n="chart.acc">Accuracy Comparison</h3>
+          <canvas id="acc-chart" width="400" height="220"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3 data-i18n="chart.f1">Macro-F1 Comparison</h3>
+          <canvas id="f1-chart" width="400" height="220"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accuracy Improvement Tips -->
+    <section class="section" id="tips">
+      <div class="section-header">
+        <h2 data-i18n="tips.title">Accuracy Improvement Strategies</h2>
+        <p data-i18n="tips.subtitle">Evidence-based techniques to push performance higher</p>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-card priority-high">
+          <div class="tip-priority" data-i18n="tips.prio.high">High Impact</div>
+          <h3 data-i18n="tips.t1.title">Increase LoRA Rank</h3>
+          <p data-i18n="tips.t1.desc">Upgrade from <code>r=8</code> to <code>r=16</code> or <code>r=32</code>. Higher rank = more learnable parameters = better task adaptation without much extra VRAM on an A100.</p>
+        </div>
+        <div class="tip-card priority-high">
+          <div class="tip-priority" data-i18n="tips.prio.high">High Impact</div>
+          <h3 data-i18n="tips.t2.title">Increase Epochs</h3>
+          <p data-i18n="tips.t2.desc">Currently 3 epochs. Pushing to <strong>5–6 epochs</strong> with early stopping on <code>macro_f1</code> allows the model to converge more completely, especially for minority classes.</p>
+        </div>
+        <div class="tip-card priority-high">
+          <div class="tip-priority" data-i18n="tips.prio.high">High Impact</div>
+          <h3 data-i18n="tips.t3.title">Weighted Loss for Class Imbalance</h3>
+          <p data-i18n="tips.t3.desc">The dominant-label approach creates class imbalance. A custom <code>Trainer</code> with <code>class_weight='balanced'</code> from sklearn (computed from training labels) can significantly boost minority class F1.</p>
+        </div>
+        <div class="tip-card priority-medium">
+          <div class="tip-priority" data-i18n="tips.prio.medium">Medium Impact</div>
+          <h3 data-i18n="tips.t4.title">Extend Max Token Length</h3>
+          <p data-i18n="tips.t4.desc">Current <code>max_len=128</code> may truncate cybersecurity reports. Increasing to <strong>256 or 512</strong> lets the model see full context, especially for long threat descriptions.</p>
+        </div>
+        <div class="tip-card priority-medium">
+          <div class="tip-priority" data-i18n="tips.prio.medium">Medium Impact</div>
+          <h3 data-i18n="tips.t5.title">Lower Learning Rate + Cosine Schedule</h3>
+          <p data-i18n="tips.t5.desc">Try <code>lr=1e-4</code> instead of <code>2e-4</code> with a cosine annealing schedule. Prevents overshooting and helps fine models like Gemma-2 and Qwen stabilize.</p>
+        </div>
+        <div class="tip-card priority-medium">
+          <div class="tip-priority" data-i18n="tips.prio.medium">Medium Impact</div>
+          <h3 data-i18n="tips.t6.title">Add Secondary Dataset</h3>
+          <p data-i18n="tips.t6.desc">Augment training with <code>AI4Sec/cti-bench</code> or <code>kasai/cti-reports</code> mapped to the same label space. More diverse cyber text improves generalization and cross-lingual transfer.</p>
+        </div>
+        <div class="tip-card priority-low">
+          <div class="tip-priority" data-i18n="tips.prio.low">Low-Cost Quick Win</div>
+          <h3 data-i18n="tips.t7.title">Label Smoothing</h3>
+          <p data-i18n="tips.t7.desc">Add <code>label_smoothing_factor=0.1</code> to <code>TrainingArguments</code>. Prevents overconfidence on noisy NER-derived labels at near-zero extra cost.</p>
+        </div>
+        <div class="tip-card priority-low">
+          <div class="tip-priority" data-i18n="tips.prio.low">Low-Cost Quick Win</div>
+          <h3 data-i18n="tips.t8.title">Gradient Checkpointing</h3>
+          <p data-i18n="tips.t8.desc">Enable <code>gradient_checkpointing=True</code> to free VRAM and allow larger batches, improving training throughput without hurting accuracy.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>BDM Final Project · Melih Can KÖK · 258273001026 · Advisor: Dr. Ali Cetinkaya</p>
+    <p>QLoRA Fine-Tuning · SmolLM2 | TinyLlama | Qwen2.5 | Gemma-2 · <code>mrmoor/cyber-threat-intelligence</code></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
