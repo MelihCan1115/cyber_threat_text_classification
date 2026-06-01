@@ -191,7 +191,7 @@ pip install -r requirements.txt
 
 **3. Run on Google Colab (recommended):**
 
-Open the notebook directly on Google Colab: [LLM_Last_Result.ipynb on Colab](https://colab.research.google.com/github/MelihCan1115/slm-cti-classification/blob/main/notebooks/LLM_Last_Result.ipynb)
+Open the notebook directly on Google Colab: [LLM_Last_Result.ipynb on Colab]([https://colab.research.google.com/github/MelihCan1115/slm-cti-classification/blob/main/notebooks/LLM_Last_Result.ipynb](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing))
 
 > Hardware requirement: GPU with ≥15 GB VRAM (Tesla T4 or better). Training all 4 models × 3 seeds takes approximately 4–5 hours.
 
@@ -205,7 +205,7 @@ In Colab, open **🔑 Secrets** (left sidebar) and add:
 
 ## Access Links
 
-- **Google Colab Notebook:** [Open in Colab](https://colab.research.google.com/github/MelihCan1115/slm-cti-classification/blob/main/notebooks/LLM_Last_Result.ipynb)
+- **Google Colab Notebook:** [Open in Colab]([https://colab.research.google.com/github/MelihCan1115/slm-cti-classification/blob/main/notebooks/LLM_Last_Result.ipynb](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing))
 - **Dataset:** [mrmoor/cyber-threat-intelligence on Hugging Face](https://huggingface.co/datasets/mrmoor/cyber-threat-intelligence)
 - **Best Fine-Tuned Model:** [MelihCan1115/cti-gemma-2-2b_seed123 on Hugging Face](https://huggingface.co/MelihCan1115/cti-gemma-2-2b_seed123)
 
@@ -248,7 +248,7 @@ Bu proje, Siber Tehdit İstihbaratı (CTI) metin sınıflandırma görevi için 
 
 ## Amaç
 
-Bu projenin amacı, QLoRA aracılığıyla parametre verimli ince ayarın (PEFT), küçük açık kaynaklı dil modellerini özelleşmiş bir siber güvenlik sınıflandırma görevine etkin biçimde uyarlayıp uyarlayamayacağını değerlendirmektir. Çalışma şu konuları araştırmaktadır:
+Bu projenin amacı QLoRA aracılığıyla parametre verimli ince ayarın (PEFT), küçük açık kaynaklı dil modellerini özelleşmiş bir siber güvenlik sınıflandırma görevine etkin biçimde uyarlayıp uyarlayamayacağını değerlendirmektir. Çalışma şu konuları araştırmaktadır:
 
 - Model parametre sayısı ile sınıflandırma doğruluğu arasındaki ilişki
 - Model boyutu, eğitim süresi ve çıkarım hızı arasındaki denge
@@ -415,13 +415,13 @@ pip install -r requirements.txt
 
 **3. Google Colab üzerinde çalıştırın (önerilen):**
 
-Not defterini doğrudan Google Colab'da açın: [LLM_Last_Result.ipynb — Colab'da Aç](https://colab.research.google.com/github/MelihCan1115/slm-cti-classification/blob/main/notebooks/LLM_Last_Result.ipynb)
+Not defterini doğrudan Google Colab'da açın: [LLM_Last_Result.ipynb — Colab'da Aç]([https://colab.research.google.com/github/MelihCan1115/slm-cti-classification/blob/main/notebooks/LLM_Last_Result.ipynb](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing))
 
 > Donanım gereksinimi: ≥15 GB VRAM'e sahip GPU (Tesla T4 veya daha iyi). 4 model × 3 çekirdek değerinin tamamının eğitilmesi yaklaşık 4–5 saat sürmektedir.
 
 **4. Hugging Face token (yalnızca model yükleme için):**
 
-Colab'da sol kenar çubuğundaki **🔑 Gizli Değerler (Secrets)** bölümünü açın ve şunları ekleyin:
+Colab'da sol kenar çubuğundaki **Gizli Değerler (Secrets)** bölümünü açın ve şunları ekleyin:
 - Anahtar: `HF_TOKEN_WRITE`
 - Değer: huggingface.co/settings/tokens adresinden aldığınız Yazma (Write) token'ı
 
@@ -429,7 +429,7 @@ Colab'da sol kenar çubuğundaki **🔑 Gizli Değerler (Secrets)** bölümünü
 
 ## Erişim Bağlantıları
 
-- **Google Colab Not Defteri:** [Colab'da Aç](https://colab.research.google.com/github/MelihCan1115/slm-cti-classification/blob/main/notebooks/LLM_Last_Result.ipynb)
+- **Google Colab Not Defteri:** [Colab'da Aç]([https://colab.research.google.com/github/MelihCan1115/slm-cti-classification/blob/main/notebooks/LLM_Last_Result.ipynb](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing))
 - **Veri Kümesi:** [Hugging Face — mrmoor/cyber-threat-intelligence](https://huggingface.co/datasets/mrmoor/cyber-threat-intelligence)
 - **En İyi İnce Ayarlı Model:** [MelihCan1115/cti-gemma-2-2b_seed123](https://huggingface.co/MelihCan1115/cti-gemma-2-2b_seed123)
 
