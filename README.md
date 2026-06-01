@@ -221,7 +221,7 @@ In Colab, open **🔑 Secrets** (left sidebar) and add:
 
 - **Google Colab Notebook:** [Open in Colab](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing)
 - **Dataset:** [mrmoor/cyber-threat-intelligence on Hugging Face](https://huggingface.co/datasets/mrmoor/cyber-threat-intelligence)
-- **Best Fine-Tuned Model:** [MelihCan1115/cti-gemma-2-2b_seed123 on Hugging Face](https://huggingface.co/MelihCan1115/cti-gemma-2-2b_seed123)
+- **Best Fine-Tuned Model:** [MelihCan1115/cti-gemma-2-2b_seed123 on Hugging Face](https://huggingface.co/MelihCan1115/cti-gemma-2-2b-seed123)
 
 ---
 
@@ -459,7 +459,7 @@ Colab'da sol kenar çubuğundaki **Gizli Değerler (Secrets)** bölümünü aç�
 
 - **Google Colab Not Defteri:** [Colab'da Aç](https://colab.research.google.com/drive/1SysgLq06HzCUf6xke7KXyBYGOHAlW58t?usp=sharing)
 - **Veri Kümesi:** [Hugging Face — mrmoor/cyber-threat-intelligence](https://huggingface.co/datasets/mrmoor/cyber-threat-intelligence)
-- **En İyi İnce Ayarlı Model:** [MelihCan1115/cti-gemma-2-2b_seed123](https://huggingface.co/MelihCan1115/cti-gemma-2-2b_seed123)
+- **En İyi İnce Ayarlı Model:** [MelihCan1115/cti-gemma-2-2b_seed123](https://huggingface.co/MelihCan1115/cti-gemma-2-2b-seed123)
 
 ---
 
