@@ -235,7 +235,6 @@ This project was developed for academic purposes as part of the **Büyük Dil Mo
 
 - **GitHub:** [github.com/MelihCan1115](https://github.com/MelihCan1115)
 - **Hugging Face:** [huggingface.co/MelihCan1115](https://huggingface.co/MelihCan1115)
-- **Student ID:** 258273001026
 
 ---
 
@@ -473,7 +472,6 @@ Bu proje, **Büyük Dil Modelleri (BDM)** dersi final ödevi kapsamında akademi
 
 - **GitHub:** [github.com/MelihCan1115](https://github.com/MelihCan1115)
 - **Hugging Face:** [huggingface.co/MelihCan1115](https://huggingface.co/MelihCan1115)
-- **Öğrenci No:** 258273001026
 
 ---
 
